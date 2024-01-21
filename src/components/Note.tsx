@@ -1,3 +1,6 @@
+import Fab from '@mui/material/Fab';
+import DeleteIcon from '@mui/icons-material/Delete';
+
 interface NoteProps {
   title: string;
   content: string;
@@ -11,7 +14,9 @@ function Note(props: NoteProps) {
     <div className="note">
       <h1>{title}</h1>
       <p>{content}</p>
-      <button onClick={onDelete}>DELETE</button>
+      <Fab onClick={onDelete} sx={{ ':hover': { backgroundColor: '#ff1744' } }}>
+        <DeleteIcon />
+      </Fab>
     </div>
   );
 }

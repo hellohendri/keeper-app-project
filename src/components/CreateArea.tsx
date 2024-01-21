@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Note from './Note';
-
+import AddIcon from '@mui/icons-material/Add';
 interface NoteItem {
   title: string;
   content: string;
@@ -53,7 +53,9 @@ const CreateArea = () => {
           onChange={changeHandler}
           value={noteItem.content}
         />
-        <button onClick={addNoteHandler}>Add</button>
+        <button onClick={addNoteHandler}>
+          <AddIcon />
+        </button>
       </form>
       {allNotes.map((item, index) => (
         <Note key={index} title={item.title} content={item.content} onDelete={() => deleteNoteHandler(index)} />
